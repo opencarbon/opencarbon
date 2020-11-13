@@ -1,0 +1,39 @@
+{% load static %}
+
+<!-- Custom widget to display Open Carbon Datasources using React-JSONSchema-Form -->
+
+<!-- <input id="{{ widget.attrs.id }}" type="hidden" name="{{ widget.name }}" {% if widget.value != None %} value="{{ widget.value }}" {% endif %} /> -->
+
+<div id="root_{{ widget.attrs.id }}" ></div>
+
+<h6>JSON Data Sources Raw Data</h6>
+<p>Note: This is an incomplete JSON field that excludes key fields and should not be used for publication</p>
+<textarea style="height: 200px;" id="{{ widget.attrs.id }}" name="{{ widget.name }}">{% if widget.value != None %}{{ widget.value }}{% endif %}</textarea>
+
+<script src="{% static 'js/opencarbon.1.0.0.min.js' %}"><</script>
+<style>
+
+    .MuiInputBase-input {
+        height: auto!important;
+    }    
+
+    .input-field label+div {
+        padding-top: 10px;
+    }    
+
+</style>
+<script type="text/javascript">
+
+    var formData = [];
+    var formDataJSON = document.getElementById('{{ widget.attrs.id }}').value.trim();
+    if (formDataJSON != '') formData = JSON.parse(formDataJSON);
+
+    function onFormChange(data) {
+        /* onFormChange: Update hidden input field whenever we change data in JSON form */ 
+        document.getElementById('{{ widget.attrs.id }}').value = JSON.stringify(data, null, 2);
+    }
+
+    OpenCarbon.DataSourcesField(onFormChange, formData, 'root_{{ widget.attrs.id }}');
+
+</script>
+

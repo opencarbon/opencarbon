@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+    web:
+        container_name: opencarbon_web        
+        build: ./app
+        command: python manage.py runserver 0.0.0.0:8000
+        ports:
+            - 8000:8000
+        env_file:
+            - ./app/.env.dev
+        environment:
+            - SQL_HOST=db
+        depends_on:
+            - db
+        volumes:
+            - ./app/:/usr/src/app/
+    
+    db:
+        container_name: opencarbon_db        
+        image: postgres:12.0-alpine
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        env_file:
+            - ./app/.env.dev
+            
+volumes:
+    postgres_data:
+

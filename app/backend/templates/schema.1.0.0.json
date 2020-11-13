@@ -1,0 +1,261 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://opencarbon.uk/schema.1.0.0.json",
+    "type": "object",
+    "title": "Open Carbon JSON Schema v1.0.0",
+    "description": "A schema to define the data structure for sharing the carbon emissions data of organisations. v1.0.0",
+    "default": {},
+    "examples": [
+        {
+            "id": "[Organisation id]",
+            "name": "[Organisation name]",
+            "parent": "[Parent organisation]",
+            "osm": "[Open Street Map URL]",
+            "datasources": [
+                {
+                    "sourceurl": "[Source URL]",
+                    "sourcepage": "[Source page]",
+                    "sourcecomments": "[Source comments]",
+                    "periodstart": "[Period start]",
+                    "periodend": "[Period end]",
+                    "dataitems": [
+                        {
+                            "measure": "[Data item measure]",
+                            "unit": "[Data item unit]",
+                            "value": "[Data item value]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "required": [
+        "name",
+        "datasources"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "Organisation id",
+            "default": "",
+            "examples": [
+                "[Organisation id]"
+            ]
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "Organisation name (required)",
+            "default": "",
+            "examples": [
+                "[Organisation name]"
+            ]
+        },
+        "parent": {
+            "$id": "#/properties/parent",
+            "type": "string",
+            "title": "Parent organisation",
+            "default": "",
+            "examples": [
+                "[Parent organisation]"
+            ]
+        },
+        "osm": {
+            "$id": "#/properties/osm",
+            "type": "string",
+            "format": "uri",
+            "title": "Open Street Map URL",
+            "default": "",
+            "examples": [
+                "[Open Street Map URL]"
+            ]
+        },
+        "datasources": {
+            "$id": "#/properties/datasources",
+            "type": "array",
+            "title": "Array of data sources (required)",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "sourceurl": "[Source URL]",
+                        "sourcepage": "[Source page]",
+                        "sourcecomments": "[Source comments]",
+                        "periodstart": "[Period start]",
+                        "periodend": "[Period end]",
+                        "dataitems": [
+                            {
+                                "measure": "[Data item measure]",
+                                "unit": "[Data item unit]",
+                                "value": "[Data item value]"
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/datasources/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/datasources/items/anyOf/0",
+                        "type": "object",
+                        "title": "Data sources schema",
+                        "default": {},
+                        "examples": [
+                            {
+                                "sourceurl": "[Source URL]",
+                                "sourcepage": "[Source page]",
+                                "sourcecomments": "[Source comments]",
+                                "periodstart": "[Period start]",
+                                "periodend": "[Period end]",
+                                "dataitems": [
+                                    {
+                                        "measure": "[Data item measure]",
+                                        "unit": "[Data item unit]",
+                                        "value": "[Data item value]"
+                                    }
+                                ]
+                            }
+                        ],
+                        "required": [
+                        ],
+                        "properties": {
+                            "sourceurl": {
+                                "$id": "#/properties/datasources/items/anyOf/0/properties/sourceurl",
+                                "type": "string",
+                                "format": "uri",
+                                "title": "Source URL",
+                                "description": "The internet address of the data source",
+                                "default": "",
+                                "examples": [
+                                    "[Source URL]"
+                                ]
+                            },
+                            "sourcepage": {
+                                "$id": "#/properties/datasources/items/anyOf/0/properties/sourcepage",
+                                "type": "string",
+                                "title": "Source page",
+                                "description": "The page number(s), where possible, of the data provided in dataitems within the original data source",
+                                "default": "",
+                                "examples": [
+                                    "[Source page]"
+                                ]
+                            },
+                            "sourcecomments": {
+                                "$id": "#/properties/datasources/items/anyOf/0/properties/sourcecomments",
+                                "type": "string",
+                                "title": "Source comments",
+                                "description": "Comments relating to the data within dataitems",
+                                "default": "",
+                                "examples": [
+                                    "[Source comments]"
+                                ]
+                            },
+                            "periodstart": {
+                                "$id": "#/properties/datasources/items/anyOf/0/properties/periodstart",
+                                "type": "string",
+                                "title": "Period start",
+                                "description": "The start date of the period the data in dataitems relates to",
+                                "default": "",
+                                "examples": [
+                                    "2019-01-01T00:00:00"
+                                ]
+                            },
+                            "periodend": {
+                                "$id": "#/properties/datasources/items/anyOf/0/properties/periodend",
+                                "type": "string",
+                                "title": "Period end",
+                                "description": "The end date of the period the data in dataitems relates to",
+                                "default": "",
+                                "examples": [
+                                    "2019-12-31T00:00:00"
+                                ]
+                            },
+                            "dataitems": {
+                                "$id": "#/properties/datasources/items/anyOf/0/properties/dataitems",
+                                "type": "array",
+                                "title": "Array of data items",
+                                "description": "An array of carbon-emissions-related data items",
+                                "default": [],
+                                "examples": [
+                                    [
+                                        {
+                                            "measure": "[Data item measure]",
+                                            "unit": "[Data item unit]",
+                                            "value": "[Data item value]"
+                                        }
+                                    ]
+                                ],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/datasources/items/anyOf/0/properties/dataitems/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/datasources/items/anyOf/0/properties/dataitems/items/anyOf/0",
+                                            "type": "object",
+                                            "title": "Data items schema",
+                                            "default": {},
+                                            "examples": [
+                                                {
+                                                    "measure": "[Data item measure]",
+                                                    "unit": "[Data item unit]",
+                                                    "value": "[Data item value]"
+                                                }
+                                            ],
+                                            "required": [
+                                                "measure",
+                                                "unit",
+                                                "value"
+                                            ],
+                                            "properties": {
+                                                "measure": {
+                                                    "$id": "#/properties/datasources/items/anyOf/0/properties/dataitems/items/anyOf/0/properties/measure",
+                                                    "type": "string",
+                                                    "title": "Data item measure",
+                                                    "default": "",
+                                                    "enum": [
+                                                        "scope1",
+                                                        "scope2.location",
+                                                        "scope2.market",
+                                                        "scope1and2.location",
+                                                        "scope1and2.market",
+                                                        "scope3",
+                                                        "floor.area"
+                                                    ]
+                                                },
+                                                "unit": {
+                                                    "$id": "#/properties/datasources/items/anyOf/0/properties/dataitems/items/anyOf/0/properties/unit",
+                                                    "type": "string",
+                                                    "title": "Data item unit",
+                                                    "default": "TCO2E",
+                                                    "enum": [
+                                                        "TCO2E",
+                                                        "M2"
+                                                    ]
+                                                },
+                                                "value": {
+                                                    "$id": "#/properties/datasources/items/anyOf/0/properties/dataitems/items/anyOf/0/properties/value",
+                                                    "type": "string",
+                                                    "title": "Data item value",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "[Data item value]"
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

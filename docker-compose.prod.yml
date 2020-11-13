@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+    web:
+        container_name: opencarbon_web        
+        build: ./app
+        command: gunicorn opencarbon.wsgi:application --bind 0.0.0.0:8000
+        volumes:
+            - static_volume:/home/app/web/static
+        expose:
+            - 8000
+        env_file:
+            - ./app/.env.prod
+        environment:
+            - SQL_HOST=db    
+        depends_on:
+            - db
+
+    db:
+        container_name: opencarbon_db       
+        image: postgres:12.0-alpine
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        env_file:
+            - ./app/.env.prod
+
+    nginx:
+        container_name: opencarbon_nginx        
+        build: ./nginx
+        volumes:
+            - static_volume:/home/app/web/static            
+        ports:
+            - 80:80
+        depends_on:
+            - web            
+
+volumes:
+    postgres_data:
+    static_volume:
+    
+    

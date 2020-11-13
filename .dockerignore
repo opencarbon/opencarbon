@@ -1,0 +1,15 @@
+.vscode
+.DS_Store
+.git
+.gitignore
+.env
+.env.dev
+.env.prod
+**/node_modules
+static/
+app/.env
+app/.env.dev
+app/.env.prod
+app/backend/migrations
+app/frontend/node_modules
+

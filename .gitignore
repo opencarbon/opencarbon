@@ -1,0 +1,17 @@
+.vscode
+.DS_Store
+venv/
+.env
+.env.dev
+.env.prod
+app/.env
+app/.env.dev
+app/.env.prod
+*.pyc
+config.py
+app/backend/migrations/
+gunicorn/
+nginx/nginx_server.conf
+static/
+app/frontend/src/constants/recaptcha.js
+recaptcha.js
