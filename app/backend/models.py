@@ -4,7 +4,7 @@ Copyright (c) Open Carbon, 2020
 This source code is licensed under the MIT license found in the
 LICENSE file in the root directory of this source tree.
 
-backend/model.py
+backend/models.py
 Django models and custom field widgets for Open Carbon backend application
 """
 

@@ -157,6 +157,11 @@ Once install has completed, you should be able to access the application by ente
 ### Installation - As Docker container
 Ensure you have run `./setup.sh` first. Also ensure you have **Docker** and **Docker Compose** installed on your machine. If you have neither, install [**Docker Desktop**](https://docker.com) which includes both applications. 
 
+Due to the use of environment variables in the Docker Compose configuration file, the version of Docker Compose must be `> 1.25.4`. To check your version of Docker Compose, type:
+```
+docker-compose --version
+``` 
+
 To run the development Docker container, switch to the directory where this `README.md` is located and type:
 
 ```
