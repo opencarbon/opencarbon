@@ -12,6 +12,8 @@ config.py
 app/backend/migrations/
 gunicorn/
 nginx/nginx_server.conf
-static/
+app/static/
+app/frontend/build/static/
+app/frontend/src/build/
 app/frontend/src/constants/recaptcha.js
 recaptcha.js
