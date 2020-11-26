@@ -6,9 +6,9 @@
  */
 
 /**
- * components/Contact.js 
+ * components/Partners.js 
  * 
- * Contact us page
+ * Partners page
  */ 
 
 import React, { Component } from 'react';
@@ -18,7 +18,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { globalstyle } from '../styles/globalstyle';
 
-class Contact extends Component {
+class Partners extends Component {
 
   render() {
 
@@ -26,16 +26,20 @@ class Contact extends Component {
         <Container maxWidth="sm">
             <Box my={4}>
                 <Typography variant="h2" gutterBottom>
-                    Contact
+                    Partners
                 </Typography>
-                <Typography variant="body1" >
-                    Drop us an email at <strong>info@opencarbon.uk</strong>
-                </Typography>
+
+                <Box mt={8}>
+                    <a target="_new" href="https://icebreakerone.org/">
+                        <img alt="Icebreaker One" width="374" height="126" src="/static/partners/01_IB1_Logo_Yellow_Roundel_Grey_Words_rgb.png" />
+                    </a>
+                </Box>
+
             </Box>
         </Container>
     );
   }
 }
 
-export default withStyles(globalstyle)(Contact);
+export default withStyles(globalstyle)(Partners);
 

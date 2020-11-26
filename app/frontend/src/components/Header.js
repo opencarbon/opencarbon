@@ -46,6 +46,7 @@ const navLinks = [
     { title: `add data`, path: `/datamenu` },
     { title: `standards`, path: `/standards` },
     { title: `endpoints`, path: `/endpoints` },
+    { title: `partners`, path: `/partners` },
     { title: `contact`, path: `/contact` },
 ];
   

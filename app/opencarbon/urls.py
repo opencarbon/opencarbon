@@ -34,6 +34,7 @@ urlpatterns = [
     path('builddata', views.home, name='home'),
     path('standards', views.home, name='home'),
     path('endpoints', views.home, name='home'),
+    path('partners', views.home, name='home'),
     path('contact', views.home, name='home'),
     path('datasubmitted', views.home, name='home'),
     path('admin/', admin.site.urls),

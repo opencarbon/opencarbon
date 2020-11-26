@@ -32,6 +32,7 @@ import BuildData from './components/BuildData';
 import DataSubmitted from './components/DataSubmitted';
 import Standards from './components/Standards';
 import Endpoints from './components/Endpoints';
+import Partners from './components/Partners';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 
@@ -66,6 +67,7 @@ class App extends Component {
                   <Route exact path="/datasubmitted" component={DataSubmitted} />
                   <Route exact path="/standards" component={Standards} />
                   <Route exact path="/endpoints" component={Endpoints} />
+                  <Route exact path="/partners" component={Partners} />
                   <Route exact path="/contact" component={Contact} />
                   <Route component={NotFound} />
                 </Switch>
