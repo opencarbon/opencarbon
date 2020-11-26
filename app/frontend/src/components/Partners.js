@@ -31,7 +31,7 @@ class Partners extends Component {
 
                 <Box mt={8}>
                     <a target="_new" href="https://icebreakerone.org/">
-                        <img alt="Icebreaker One" width="374" height="126" src="/static/partners/01_IB1_Logo_Yellow_Roundel_Grey_Words_rgb.png" />
+                        <img alt="Icebreaker One" style={{ maxWidth: "90%", minWidth: "200px", height: "auto"}} src="/static/partners/01_IB1_Logo_Yellow_Roundel_Grey_Words_rgb.png" />
                     </a>
                 </Box>
 
