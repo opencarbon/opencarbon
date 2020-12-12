@@ -77,11 +77,12 @@ class App extends Component {
           </main>
 
           <footer className={classes.footer}>
-            <Typography variant="subtitle1" align="center" color="textSecondary" component="p" gutterBottom>
+            <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
                 <Link variant="button" target="_new" href="https://icebreakerone.org/">
                     An Icebreaker One project
                 </Link>
-                &nbsp;|&nbsp;
+            </Typography>
+            <Typography variant="subtitle1" align="center" color="textSecondary" component="p" gutterBottom>
                 <Link variant="button" target="_new" href="https://eit.europa.eu/">
                     Supported by EIT Climate-KIC
                 </Link>
