@@ -217,6 +217,17 @@ info@opencarbon.uk
 ## Copyright
 
 Open Carbon Toolkit  
-Copyright (c) Open Carbon, 2020 
+Copyright (c) Open Carbon, 2020  
+Released under MIT License  
+
 Developed by Stefan Haselwimmer  
-Released under MIT License
+
+An [Icebreaker One](https://icebreakerone.org/) project
+
+![Icebreaker One](readme/01_IB1_Logo_Yellow_Roundel_Grey_Words_rgb_400x135.png)
+
+Supported by [EIT Climate-KIC](https://eit.europa.eu/)
+
+![EIT Climate-KIC](readme/EIT-Climate-KIC-EU-flag-transparent_400x138.png)  
+
+

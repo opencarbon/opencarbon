@@ -30,8 +30,26 @@ class Partners extends Component {
                 </Typography>
 
                 <Box mt={8}>
+                    <Typography variant="h5" gutterBottom>
+                        An <a target="_new" style={{textDecoration: "none"}} href="https://icebreakerone.org/">Icebreaker One</a> project
+                    </Typography>
+                </Box>
+
+                <Box mt={3}>
                     <a target="_new" href="https://icebreakerone.org/">
                         <img alt="Icebreaker One" style={{ maxWidth: "90%", minWidth: "200px", height: "auto"}} src="/static/partners/01_IB1_Logo_Yellow_Roundel_Grey_Words_rgb.png" />
+                    </a>
+                </Box>
+
+                <Box mt={8}>
+                    <Typography variant="h5" gutterBottom>
+                        Supported by <a target="_new" style={{textDecoration: "none"}} href="https://eit.europa.eu/">EIT Climate-KIC</a>
+                    </Typography>
+                </Box>
+
+                <Box mt={3}>
+                    <a target="_new" href="https://eit.europa.eu/">
+                        <img alt="EIT Climate-KIC" style={{ maxWidth: "90%", minWidth: "200px", height: "auto"}} src="/static/partners/EIT-Climate-KIC-EU-flag-transparent.png" />
                     </a>
                 </Box>
 
